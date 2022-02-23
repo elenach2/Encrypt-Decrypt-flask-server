@@ -5,7 +5,7 @@ import json
 
 """
 Rest api web server with encrypt/ decrypt messages service.
-When a message is imputed the server encrypts it and returns to the client a "message ID" and  "key". 
+When a message is inputed the server encrypts it and returns to the client a "message ID" and  "key". 
 With the given key and message ID the message can be decrypted.
 
 Commands to run in the command line:
