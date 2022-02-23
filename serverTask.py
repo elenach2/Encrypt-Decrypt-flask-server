@@ -31,10 +31,7 @@ parser = reqparse.RequestParser()
 parser.add_argument('message', required=False)
 parser.add_argument('key', required=False)
 
-#
-# messages = {
-#     'message1': 'gAAAAABiFWSiNGoZLmlu9bv2N8ezw0AC98VPLOvaQO_vQUM3gXjWrJ4swTM7ZfAi9zjKJIR1okZJQxw9dmX-3JdcKh5lN9Fw-g=='}
-# Message 1 key = '8fuOlp2CJimss6yfzyX-pmjHExci210wH7UCru7JVbU='
+
 messages = {}
 
 
