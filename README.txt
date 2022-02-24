@@ -7,7 +7,7 @@
 	pip install flask
 	pip install flask-restful
 	pip install cryptography
-	pip install client
+	pip install clients
 
 *** How to run the script:
 	Open command line (cmd) 
