@@ -6,7 +6,7 @@
 *** Installation: 
 	pip install flask
 	pip install flask-restful
-	pip install requests
+	pip install cryptography
 	pip install client
 
 *** How to run the script:
