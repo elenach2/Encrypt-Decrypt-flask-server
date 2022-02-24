@@ -20,7 +20,7 @@ To add a new message:
     curl http://localhost:5000/newmessages -d "message=<user_message>" -X POST
     
 To decrypt a message:
-    # curl http://localhost:5000/decrypt -d "message=<message_id>&key=<users_key>" -X POST
+    curl http://localhost:5000/decrypt -d "message=<message_id>&key=<users_key>" -X POST
     
 """
 
@@ -38,12 +38,11 @@ messages = {}
 # Create a json file to save the data
 def write_changes_to_file():
     global messages
-    messages = {k: v for k, v in sorted(messages.items(), key=lambda message: message[0])}
     with open('messages.json', 'w') as f:
         json.dump(messages, f)
 
 
-# If jason already exists, use it if not create the json.
+# If json already exists, use it if not create the json.
 try:
     with open('messages.json', 'r') as f:
         messages = json.load(f)
@@ -79,9 +78,9 @@ class NewMessage(Resource):
         else:
             new_message = {'message': args['message']}
             # The messages ID constantly increases by one according to the number of messages
-            message_id = max(int(m.lstrip('message')) for m in messages.keys()) + 1
+            message_id = str(max(int(m) for m in messages.keys()) + 1)
 
-        message_id = f"message{message_id}"
+        
         messages[message_id] = self.encrypt_message(new_message['message'])
         # For us to send a key to the user we need to change its type to string for bytes.
         output_for_the_client = [message_id, self.key.decode('utf8')]
@@ -100,7 +99,8 @@ class DecryptGivenMessage(Resource):
     # The post method finds the message ID in the json file and
     # sends the encrypted message to the "decrypt_message" method
     def post(self):
-
+        if len(messages) == 0:
+            return "___ NO MESSAGES TO DECRYPT ___"
         client_input = parser.parse_args()
         if client_input["message"] not in messages.keys():
             msg = client_input["message"]
