@@ -14,9 +14,9 @@ client = clients.Client(URL)
 
 # This class if for encrypting and decrypting messages.
 class EncryptDecryptMessage:
-    # This method will encrypt a message that the user inputted
-    # The method will print a message ID and a key so the user will be able to decrypt his/hers message
-    # The user must  copy the key and save it somewhere safe so he/she will be able to decrypt the message
+    # This method will encrypt a message that the user inputted.
+    # The method will print a message ID and a key so the user will be able to decrypt his/hers message.
+    # The user must copy the key and save it somewhere safe so he/she will be able to decrypt the message.
     def encrypt_message(self, message):
         new_message = {'message': message}
         request = client.post('/newmessages', data=new_message)

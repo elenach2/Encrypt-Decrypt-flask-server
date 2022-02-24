@@ -51,7 +51,7 @@ except IOError:
     write_changes_to_file()
 
 
-# Through this the class "SecretMessages" we can see all the encrypted messages or to see a specific encrypted message
+# Through this the class "SecretMessages" we can see all the encrypted messages or to see a specific encrypted message.
 class SecretMessages(Resource):
 
     def get(self, message_id):
@@ -62,7 +62,7 @@ class SecretMessages(Resource):
         return messages[message_id]
 
 
-# The class "NewMessage" let us get a new message and to encrypt it before it saves it
+# The class "NewMessage" let us get a new message and to encrypt it before it saves it.
 class NewMessage(Resource):
     # in the init we get a new secret key for every message the user inputs.
     def __init__(self):
@@ -77,7 +77,7 @@ class NewMessage(Resource):
             message_id = '1'
         else:
             new_message = {'message': args['message']}
-            # The messages ID constantly increases by one according to the number of messages
+            # The messages ID constantly increases by one according to the number of messages.
             message_id = str(max(int(m) for m in messages.keys()) + 1)
 
         

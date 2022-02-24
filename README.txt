@@ -18,11 +18,11 @@
 ***To do in the cmd after you run the client.py
 	choose: 
 		1 to encrypt a message 
-			input: message
-			output: message id and key
+			input: message.
+			output: message id and key.
 		2 to decrypt a message 
-			input: message id and key
-			output: decrypted message
+			input: message id and key.
+			output: decrypted message.
 		3 to exit
 			exits the program.
 
