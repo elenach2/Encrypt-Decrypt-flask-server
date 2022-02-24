@@ -74,7 +74,7 @@ class NewMessage(Resource):
         args = parser.parse_args()
         if len(messages) == 0:
             new_message = {'message': args['message']}
-            message_id = 1
+            message_id = '1'
         else:
             new_message = {'message': args['message']}
             # The messages ID constantly increases by one according to the number of messages
