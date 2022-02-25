@@ -10,10 +10,10 @@
 	pip install clients
 
 *** How to run the script:
-	Open command line (cmd) 
+	Open command line (cmd) in the folder where you saved the files.
 	Commands to run in the command line:
-		Run severTask.py
-		Run client.py
+		python severTask.py
+		python client.py
 
 ***To do in the cmd after you run the client.py
 	choose: 
